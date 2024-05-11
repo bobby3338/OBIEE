@@ -15,7 +15,7 @@ vi createPrivateInventory.txt
 	inventory_loc=$ORACLE_HOME/privOraInv.loc
 	inst_group=staff
 
-find group
+find groups
 shell: groups
 use the first one.
 
