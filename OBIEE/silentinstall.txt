@@ -1,0 +1,173 @@
+https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=580996106959909&parent=EXTERNAL_SEARCH&sourceId=HOWTO&id=2267490.1&_afrWindowMode=0&_adf.ctrl-state=k5x88uq84_4
+In this Document
+Goal
+Solution
+ 	Where Softwares can be download:
+ 	Response Files:
+ 	Silent Installation
+ 	Step 1 - Unzip Softwares
+ 	Step 2 - Environment Variables
+ 	Step 3 - Installation
+ 	Install WebLogic in silent mode:
+ 	Install OBIEE in silent mode:
+ 	Configure OBIEE in silent mode:
+ 	Validation:
+References
+
+APPLIES TO:
+Business Intelligence Suite Enterprise Edition - Version 12.2.1.0.0 and later
+Information in this document applies to any platform.
+GOAL
+On Oracle Business Intelligence Enterprise Edition 12.2.1.x version,
+
+How to perform silent installation of OBIEE 12c? 
+
+SOLUTION
+This document demonstrates the steps to perform Silent Installation of OBIEE 12c.
+
+Why Silent Installation is required?
+
+When OBIEE 12c is being installed on Linux box where GUI access has not been given then go for Silent Installation i.e., install using command lines via PUTTY.
+
+This installation is more complicated and it requires "Response Files" of each component for:
+
+Weblogic Installation
+OBIEE Installation
+OBIEE Configuration.
+Where Softwares can be download:
+Open the link: http://www.oracle.com/technetwork/middleware/bi/downloads/default-3237328.html
+
+Download the listed softwares [For e.g., Software details given for 12.2.1.2 Release].
+
+WebLogic Server (fmw_12.2.1.2.0_infrastructure_Disk1_1of1.zip)
+Oracle Business Intelligence 12c (fmw_12.2.1.2.0_bi_linux64_Disk1_1of2.zip and fmw_12.2.1.2.0_bi_linux64_Disk1_2of2.zip)
+Response Files:
+Once downloaded all the required softwares, prepare the following response files before installation.
+
+Weblogic response file
+OBIEE response file
+Config response file
+The response files attached here are necessary for the silent installation. Change values according to the environment which are in bold.
+
+In this silent installation, RCU is installed as part of the OBIEE configuration.
+Silent Installation
+Oracle Inventory Location:   inventory_loc=/../oraInventory
+
+Step 1 - Unzip Softwares
+Make sure all the response file are ready. 'Unzip' all the software in a single directory.
+
+Step 2 - Environment Variables
+Set the below Environment variables before starting installation.  Make sure all set properly. 
+
+export MW_HOME=/../ORACLE/Middleware
+
+export WLS_HOME=$MW_HOME/wlserver
+
+export WL_HOME=$WLS_HOME
+
+export DOMAIN_HOME=$MW_HOME/user_projects/domains/bi
+
+export JAVA_HOME=/../jdk1.8.0_121
+
+export PATH=$JAVA_HOME/bin:$PATH
+
+export ORACLE_HOME=<Path of Oracle_Home>
+
+Step 3 - Installation
+Perform the installation in the following sequence.
+
+Install WebLogic in silent mode:
+Go to the directory where all softwares are unzipped. Run the following command:
+
+-bash-4.2$ java -jar fmw_12.2.1.2.0_infrastructure.jar -silent -responseFile /apps/../Weblogic.rsp -invPtrLoc /../../OraInst.loc
+Once the installation started, will receive the following response on the screen.
+
+Launcher log file is /tmp/OraInstall2017-05-10_11-44-25AM/launcher2017-05-10_11-44-25AM.log.
+Extracting the installer . . . . . . . . Done
+Checking if CPU speed is above 300 MHz. Actual 2799.057 MHz Passed
+Checking swap space: must be greater than 512 MB. Actual 8191 MB Passed
+Checking if this platform requires a 64-bit JVM. Actual 64 Passed (64-bit not required)
+Checking temp space: must be greater than 300 MB. Actual 3217 MB Passed
+
+Preparing to launch the Oracle Universal Installer from /tmp/OraInstall2017-05-10_11-44-25AM
+Log: /tmp/OraInstall2017-05-10_11-44-25AM/install2017-05-10_11-44-25AM.log
+Copyright (c) 1996, 2016, Oracle and/or its affiliates. All rights reserved.
+Reading response file..
+Skipping Software Updates
+Starting check : CertifiedVersions
+Prerequisite Check was skipped and did not execute.
+Warning: Check:CertifiedVersions completed with warnings.
+
+Starting check : CheckJDKVersion
+Expected result: 1.8.0_101
+Actual Result: 1.8.0_121
+Check complete. The overall result of this check is: Passed
+CheckJDKVersion Check: Success.
+
+Validations are enabled for this session.
+Verifying data
+Copying Files
+Percent Complete : 10
+Percent Complete : 20
+Percent Complete : 30
+Percent Complete : 40
+Percent Complete : 50
+Percent Complete : 60
+Percent Complete : 70
+Percent Complete : 80
+Percent Complete : 90
+Visit http://www.oracle.com/support/policies.html for Oracle Technical Support policies.
+
+Percent Complete : 100
+
+The installation of Oracle Fusion Middleware 12c Infrastructure 12.2.1.2.0 completed successfully.
+Logs successfully copied to /../../ORACLE/oraInventory/logs.
+
+Install OBIEE in silent mode:
+Go to the directory where all softwares are unzipped. Run the following command:                   
+
+./bi_platform-12.2.1.2.0_linux64.bin -silent -responseFile /../../OBI.rsp -invPtrLoc /../../OraInst.loc -ignoreSysPrereqs
+Once the installation started, will receive the following response on the screen.
+
+$ ./bi_platform-12.2.1.2.0_linux64.bin -silent -responseFile /../../OBI.rsp -invPtrLoc /../../OraInst.loc -ignoreSysPrereqs
+0%.................................................................100%
+Launcher log file is /tmp/OraInstall2017-05-10_11-55-26AM/launcher2017-05-10_11-55-26AM.log.
+Extracting the installer . . . . . . . . . Done
+Checking if CPU speed is above 300 MHz. Actual 2799.057 MHz Passed
+Checking swap space: must be greater than 512 MB. Actual 8191 MB Passed
+
+Preparing to launch the Oracle Universal Installer from /tmp/OraInstall2017-05-10_11-55-26AM
+Log: /tmp/OraInstall2017-05-10_11-55-26AM/install2017-05-10_11-55-26AM.log
+Copyright (c) 1999, 2016, Oracle and/or its affiliates. All rights reserved.
+Reading response file..
+Skipping Software Updates
+Validations are enabled for this session.
+Verifying data
+Copying Files
+Percent Complete : 10
+Percent Complete : 20
+Percent Complete : 30
+Percent Complete : 40
+Percent Complete : 50
+Percent Complete : 60
+Percent Complete : 70
+Percent Complete : 80
+Percent Complete : 90
+Percent Complete : 100
+
+The installation of bi_platform 12.2.1.2.0 completed successfully.
+
+Logs successfully copied to /../../ORACLE/oraInventory/logs.
+
+Configure OBIEE in silent mode:
+Once the installation succeeded, go to the directory: <MIDDLEWARE_HOME>/bi/bin.
+
+Run the configuration script by using the command:
+
+./config.sh -silent -responseFile /../../ORACLE/Middleware/bi/bin/biconfig.rsp -invPtrLoc /../../OraInst.loc
+Once the configuration is successfully completed, all servers will be in "RUNNING" status.
+
+Note: RCU password should have Alphabets, Numbers. Also should have "Special Characters" like ‘#’.
+
+Validation:
+Test the application by opening Console, EM, Analytics and XMLPServer URLs.
