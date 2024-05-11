@@ -60,5 +60,17 @@ $ORACLE_HOME/domains/template_domain/config/config.xml
 
 *Managed Server
 logical name / listen address / listen port
+standalone / cluster?
+command: ./startManagedWebLogic.sh ms1 t3://localhost:7001  (admin server listen port) retrieve setting from admin server
+prompt username and password
+shutdown ms1
+create boot.properties
+cd $ORACLE_HOME/demo_domain/servers/AdminServer/security/boot.properties  (Admin Server example)
+mkdir $ORACLE_HOME/demo_domain/servers/ms1/security
+vi $ORACLE_HOME/demo_domain/servers/ms1/security/boot.properties
+	username=weblogic
+	password=weblogic123
+restart the ms1
+./startManagedWebLogic.sh ms1 t3://localhost:7001
 
-
+*$ORACLE_HOME/domains/demo_domain/security/SerializedSystemIni.dat (key file to decrypt passwd in the domain)
