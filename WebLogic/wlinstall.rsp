@@ -1,0 +1,7 @@
+[ENGINE]
+
+Response File Version=1.0.0.0.0
+
+[GENERIC]
+ORACLE_HOME=/opt/app/Oracle/Middleware/Oracle_Home
+INSTALL_TYPE=Complete with Examples
