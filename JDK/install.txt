@@ -1,0 +1,30 @@
+download jdk tar.gz
+sudo mkdir /opt/app/java/jdk
+cd /opt/app/java/jdk
+tar -xvzf <path to file > .
+vi /etc/environment
+/opt/app/java/jdk/bin
+/opt/app/java/jdk/db/bin
+/opt/app/java/jdk/jre/bin
+
+J2SDKDIR="/usr/lib/jvm/jdk1.8.0_401"
+J2REDIR="/usr/lib/jvm/jdk1.8.0_401/jre"
+JAVA_HOME="/usr/lib/jvm/jdk1.8.0_401"
+DERBY_HOME="/usr/lib/jvm/jdk1.8.0_401/db"
+
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+
+alternatives --install /usr/bin/java java /opt/jdk1.8.0_40/bin/java 
+alternatives --config java
+
+alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_40/bin/jar 
+alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_40/bin/javac 
+alternatives --set jar /opt/jdk1.8.0_40/bin/jar
+alternatives --set javac /opt/jdk1.8.0_40/bin/javac 
+
+export JAVA_HOME=/opt/app/java/jdk
+
+Verify 
+  update-alternatives --list java
+  update-alternatives --list javac
+  java -version
