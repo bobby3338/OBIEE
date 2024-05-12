@@ -3,7 +3,7 @@ sudo mkdir /opt/app/java/jdk
 cd /opt/app/java/jdk
 tar -xvzf <path to file > .
 
-ln -s <source> 
+ln -s <source> myfile
 vi /etc/environment
 /opt/app/java/jdk/bin
 /opt/app/java/jdk/db/bin
