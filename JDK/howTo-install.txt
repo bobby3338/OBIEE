@@ -2,15 +2,17 @@ download jdk tar.gz
 sudo mkdir /opt/app/java/jdk
 cd /opt/app/java/jdk
 tar -xvzf <path to file > .
+
+ln -s <source> 
 vi /etc/environment
 /opt/app/java/jdk/bin
 /opt/app/java/jdk/db/bin
 /opt/app/java/jdk/jre/bin
 
-J2SDKDIR="/usr/lib/jvm/jdk1.8.0_401"
-J2REDIR="/usr/lib/jvm/jdk1.8.0_401/jre"
-JAVA_HOME="/usr/lib/jvm/jdk1.8.0_401"
-DERBY_HOME="/usr/lib/jvm/jdk1.8.0_401/db"
+J2SDKDIR="/opt/app/java/jdk"
+J2REDIR="/opt/app/java/jdk/jre"
+JAVA_HOME="/opt/app/java/jdk"
+DERBY_HOME="/opt/app/java/jdk/db"
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 
@@ -19,6 +21,7 @@ alternatives --config java
 
 alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_40/bin/jar 
 alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_40/bin/javac 
+
 alternatives --set jar /opt/jdk1.8.0_40/bin/jar
 alternatives --set javac /opt/jdk1.8.0_40/bin/javac 
 
