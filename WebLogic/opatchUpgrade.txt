@@ -1,0 +1,18 @@
+Upgrade Instructions:
+Download Patch 28186730
+Unzip Patch 28186730
+You will see 6880880 directory
+Set JAVA_HOME
+$ export JAVA_HOME=/local/mnt/oracle/products/jdk
+$ export PATH=/local/mnt/oracle/products/jdk/bin:${PATH}
+Set ORACLE_HOME to the directory where you have installed your fusion middleware directory
+$ export ORACLE_HOME=/local/mnt/oracle/products/fmw
+Include OPatch to PATH
+$ export PATH=/local/mnt/oracle/products/fmw/OPatch:${PATH}
+Check Opatch Version
+$ opatch version
+Upgrade Opatch
+Syntax: java -jar <PATCH_HOME>/6880880/opatch_generic.jar -silent oracle_home=<ORACLE_HOME_LOCATION>
+Example: java -jar /local/mnt/oracle/6880880/opatch_generic.jar -silent oracle_home=/local/mnt/oracle/products/fmw/
+Check Opatch Version
+$ opatch version
