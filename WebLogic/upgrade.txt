@@ -1,0 +1,14 @@
+Step 1: Check Your Applications (Undeploy If Necessary)
+
+Step 2: Shut Down Servers in the Application Environment
+
+Step 3: Back Up the Application Environment
+  Domain directory / Applications and application-persisted data / Log files
+  
+Step 4: Install Required Oracle Products
+
+Step 5: Set Up the Environment
+
+  java -jar fmw_12.2.1.4.0_wls_lite_generic.jar
+The default Domain home location is ORACLE_HOME/user_projects/domains/domain_name
+The default Application home location is ORACLE_HOME/user_projects/applications/domain_name
