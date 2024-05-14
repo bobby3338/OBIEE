@@ -1,3 +1,13 @@
+WHAT IS THE ADMIN SERVER LISTEN PORT 
+            SSL LISTEN PORT
+
+mkdir domains / applications /oraInventory
+/opt/app/domains
+/opt/app/applications
+/opt/app/oraInventory
+
+where is the domains? 
+
 **Silence Install
 
 **wlinstall.rsp
