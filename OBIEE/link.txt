@@ -3,7 +3,7 @@ https://support.oracle.com/epmos/faces/SearchDocDisplay?_adf.ctrl-state=1cgrgjk7
 
 Install Book 
 https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/install-books.html
-
+https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/clust/migration.html#GUID-6B56A557-F168-4F55-AD01-78A4D8B8B3A6
 
 Post-Migration Tasks for Oracle BI EE
 Migrating Catalog Groups
