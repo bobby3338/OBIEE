@@ -1,6 +1,10 @@
 The Oracle Business Intelligence 12.2.1.4 Installer for Fusion Middleware 12.2.1.4 
 https://support.oracle.com/epmos/faces/SearchDocDisplay?_adf.ctrl-state=1cgrgjk7y1_4&_afrLoop=413603628988307#ANN_DETAILS
 
+Install Book 
+https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/install-books.html
+
+
 Post-Migration Tasks for Oracle BI EE
 Migrating Catalog Groups
 Catalog groups were a feature of Oracle BI EE that allowed administrators to organize users and application roles for security administration purposes.
