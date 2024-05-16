@@ -1,0 +1,34 @@
+The Oracle Business Intelligence 12.2.1.4 Installer for Fusion Middleware 12.2.1.4 
+https://support.oracle.com/epmos/faces/SearchDocDisplay?_adf.ctrl-state=1cgrgjk7y1_4&_afrLoop=413603628988307#ANN_DETAILS
+
+Post-Migration Tasks for Oracle BI EE
+Migrating Catalog Groups
+Catalog groups were a feature of Oracle BI EE that allowed administrators to organize users and application roles for security administration purposes.
+Migrating Configuration of Oracle BI EE
+After migrating the data, manually migrate the configuration information from the 11g system to the 12c system, which includes WebLogic security, Enterprise Manager security, the managed BI configurations, BI logs, BI Server, and BI Presentation Server configuration settings.
+Configuring the Database to Use DataDirect Drivers
+You must configure the database to use the appropriate DataDirect drivers. If you are using a database that is already configured to use the DataDirect drivers, modify the database configuration's odbc.ini file to use the correct DataDirect drivers. 
+Configuring Usage Tracking
+The Oracle BI Server supports the collection of usage tracking data. When usage tracking is enabled, the BI Server collects usage tracking data for each query. The statistics are then written to a usage tracking log file or are inserted directly in to a database table. After you complete migrating and configuring the 12c system, you must enable usage tracking in the NQSConfig.INI file.
+Configuring the SQL Server
+After configuring the 12c system, you must configure the SQL Server settings in the odbc.ini file.
+Adding Roles and Permissions
+After migrating the data, you must add roles and permissions for BI Administrator, BI Author, and BI Consumer groups.
+Configuring MySQL for Oracle BI
+You must configure the MySQL database to use the DataDirect driver. If you are using a database that is already configured to use the DataDirect drivers, modify the database configuration's odbc.ini file to use the correct DataDirect drivers.
+Checking Oracle BI JavaHost Configuration
+Make sure that the XMLP and Oracle BI JavaHost settings match with the settings specified for the configuration of the 11g system.
+Enabling Clusters
+After migrating the data, you must manually enable the ClusterEnabled parameter in the ClusterConfig.xml file to turn on the cluster instances on the 12c system.
+Enabling Oracle Hardware Acceleration and Compatibility Mode
+Hardware acceleration affects the autocompletion of features such as dashboard prompts, trellis charts and microcharts, Summary Advisor functionality, and aggregate persistence for the TimesTen In-Memory database. Therefore, you must manually enable the bi:hw-acceleration flag in the 12c bi-config.xml file post-migration. You must also enable the bi:compat-mode-11g flag, so that the state of the 11g system is preserved at run time.
+Setting the Compatibility Framework for Oracle BI Server
+The compatibility framework allows the BI Server to add new features or bug fixes in Oracle BI 12c (12.2.1.1 and later) that are not compatible with the Oracle BI 11g releases while providing a flexible framework that enables the BI Server to operate in a compatibility mode with the earlier major release. Individual features and bug fixes can be enabled or disabled independently using compatibility flags. Alternatively, you can set all the compatibility flags to the default values using a single COMPATIBLE_RELEASE flag for the Oracle BI system to be compatible with the earlier release, which is 11.1.1.9. Add the COMPATIBLE_RELEASE parameter to the NQSConfig.INI file to ensure that the migrated 12c environment behaves as closely as possible to Oracle Business Intelligence 11g Release 1 (11.1.1.9) environment.
+Migrating the Fusion Middleware MapViewer Configuration
+Oracle Fusion Middleware Mapviewer (MapViewer) is a programmable tool for rendering maps using spatial data managed by Oracle Spatial and Graph or Oracle Locator (also referred to as Locator). MapViewer provides tools that hide the complexity of spatial data queries and cartographic rendering, while providing customizable options for more advanced users. These tools can be deployed in a platform-independent manner and are designed to integrate with map-rendering applications. After migrating the data, you must manually modify the 12c MapViewer configuration file to contain the same contents as the 11g file except the Logging section.
+Resolving Authentication Issues After Migration
+To avoid authentication issues post-migration, you must uncheck the Required for Authentication option in the DYNAMIC_OLAP_LOGIN initialization block.
+Copying Configuration Files
+You must manually copy the following configuration files after the migration: writebacktemplate.xml, userpref_currencies.xml, and bicustom.ear.
+Removing the Display of HTML Codes in a Customized "No Results" Message
+In an analysis, content developers can control the text that is displayed when the results of the analysis return no data. Content developers can accept the default message, or they can customize the text of the message, including by inserting HTML formatting codes in the message.
