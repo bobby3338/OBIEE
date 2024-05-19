@@ -33,5 +33,5 @@ SOFTWARE_UPDATES_PROXY_PASSWORD=
 ORACLE_HOME=<Path of ORACLE_HOME>
 
 #Set this variable value to the Installation Type selected. e.g. BI Platform Distribution, BI Platform Distribution with Samples.
-INSTALL_TYPE=BI Platform Distribution with Samples
+INSTALL_TYPE=BI Platform Distribution
 ~
