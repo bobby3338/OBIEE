@@ -34,10 +34,8 @@ Verify
   java -version
 
 
-JAVA_HOME=/opt/app/java/jdk
-export JAVA_HOME
-PATH=$JAVA_HOME/bin:$PATH
-export PATH
+export JAVA_HOME=/opt/app/java/jdk
+export PATH=$JAVA_HOME/bin:$PATH
 
 vi /etc/profile   (apply to all user)
   JAVA_HOME=/opt/app/java/jdk
