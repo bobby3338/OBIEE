@@ -1,0 +1,58 @@
+###users and groups###
+groupadd -g 54321 oinstall
+groupadd -g 54322 dba
+groupadd -g 54323 oper
+useradd -u 54321 -g oinstall -G dba, oper oracle
+passwd oracle
+
+mkdir -p /opt/app/Oracle
+chown -R oracle:oinstall /opt/app/Oracle
+chmod -R oracle
+
+###ports###
+9500-9505, 1521, 22
+/etc/hosts
+ip addr hostname
+
+###install jdk###
+su - oracle
+.bash_profile
+	export JAVA_HOME=/opt/app/java/jdk
+	export PATH=$JAVA_HOME/bin:$PATH
+	export ORACLE_HOME=/opt/app/Oracle/Middleware/Oracle/Oracle_Home?
+	
+
+###install FMW###
+java -jar fmw -silent -responseFile <path to response file>
+
+###install obiee###
+java -jar
+
+###configure rdu###
+./rcu
+
+database connection detail
+hostname:
+port: 1521
+Service name: evercare
+User: sys
+Password: 
+
+###create new prefix###
+APEXDB
+
+configure obiee
+./config.sh
+domain
+
+database details
+simple connect string: 
+prefix:
+password:
+
+###Start/Stop services###
+$ORACLE_HOME/user_projects/domains/bi/bitools/bin
+
+HOSTNAME:9502/analytics
+HOSTNAME:9500/em
+HOSTNAME:9500/console
