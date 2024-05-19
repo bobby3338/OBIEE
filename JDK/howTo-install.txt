@@ -16,6 +16,8 @@ DERBY_HOME="/opt/app/java/jdk/db"
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/app/java/jdk/bin:/opt/app/java/jdk/db/bin://opt/app/java/jdk/jre/bin"
+sudo alternatives --install /usr/bin/java java /usr/java/jdk-<version>/bin/java 200000
+sudo alternatives --install /usr/bin/javac javac /usr/java/jdk-<version>/bin/javac 200000
 
 alternatives --install /usr/bin/jar jar /opt/app/java/jdk/bin/jar 
 alternatives --install /usr/bin/javac javac /opt/app/java/jdk/bin/javac 
